@@ -26,3 +26,9 @@
   background-color: #11045e;
   color: white;
 }
+
+@media screen and (max-width: 500px) {
+  .tableStyle {
+    width: 90%;
+  }
+}
