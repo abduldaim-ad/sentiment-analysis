@@ -18,9 +18,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>AI Chatbot</title>
+        <title>SA</title>
         <meta name="description" content="AI Chatbot using GPT-3" />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="https://www.memind.eu/wp-content/uploads/2022/01/sentiment-analysis-emotion-detection.jpg"
+        />
       </Head>
 
       <main>
