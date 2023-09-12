@@ -23,29 +23,31 @@ const SentimentAnalysis: React.FC<SentimentProps> = ({
   };
 
   const analyzeSentiment = () => {
-    const sentimentAnalysis = new Sentiment();
-    const result = sentimentAnalysis.analyze(inputText);
-    let newItem: ISentiment;
+    if (inputText.trim()) {
+      const sentimentAnalysis = new Sentiment();
+      const result = sentimentAnalysis.analyze(inputText);
+      let newItem: ISentiment;
 
-    if (result.score > 0) {
-      setSentiment("Positive");
-      newItem = { statement: inputText, result: "Positive" };
-    } else if (result.score < 0) {
-      setSentiment("Negative");
-      newItem = { statement: inputText, result: "Negative" };
-    } else {
-      setSentiment("Neutral");
-      newItem = { statement: inputText, result: "Neutral" };
+      if (result.score > 0) {
+        setSentiment("Positive");
+        newItem = { statement: inputText, result: "Positive" };
+      } else if (result.score < 0) {
+        setSentiment("Negative");
+        newItem = { statement: inputText, result: "Negative" };
+      } else {
+        setSentiment("Neutral");
+        newItem = { statement: inputText, result: "Neutral" };
+      }
+      increment();
+      setSentimentData((prevArray) => [...prevArray, newItem]);
+
+      const oldDataJSON = localStorage.getItem("sentimentData");
+      const oldData: ISentiment[] = oldDataJSON ? JSON.parse(oldDataJSON) : [];
+      const updatedData = [...oldData, newItem];
+      localStorage.setItem("sentimentData", JSON.stringify(updatedData));
+
+      setInputText("");
     }
-    increment();
-    setSentimentData((prevArray) => [...prevArray, newItem]);
-
-    const oldDataJSON = localStorage.getItem("sentimentData");
-    const oldData: ISentiment[] = oldDataJSON ? JSON.parse(oldDataJSON) : [];
-    const updatedData = [...oldData, newItem];
-    localStorage.setItem("sentimentData", JSON.stringify(updatedData));
-
-    setInputText("");
   };
 
   return (
