@@ -54,7 +54,7 @@ const SentimentAnalysis: React.FC<SentimentProps> = ({
     <div className={styles.mainDiv}>
       <h2>Sentiment Analysis MY EMAIL: <strong>gdaim551@gmail.com</strong></h2>
       <textarea
-        placeholder="THIS IS MY EMAIL: gdaim551@gmail.com (Please send a test email once you see this)"
+        placeholder="THIS IS MY EMAIL: gdaim551@gmail.com (Please send a test email once you see this and please don't ask anything about this in discussion as I am not sure about it.)"
         value={inputText}
         className={styles.textAreaStyle}
         onChange={(e) => setInputText(e.target.value)}
