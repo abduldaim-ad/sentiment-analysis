@@ -52,7 +52,7 @@ const SentimentAnalysis: React.FC<SentimentProps> = ({
 
   return (
     <div className={styles.mainDiv}>
-      <h2>Sentiment Analysis M=Y E=M=A=I=L (I=G=N=O=R=E = S=I=G=N): <strong>g=d=a=i=m=5=5=1=@=g=m=a=i=l=.=c=o=m</strong></h2>
+      <h2>Sentiment Analysis</h2>
       <textarea
         placeholder="Enter text for sentiment analysis"
         value={inputText}
